@@ -1,10 +1,9 @@
-package testcase;
+package testcases;
 
 
-import automation.SignInPage;
-import automation.VerifySignIn;
+import pages.NavigateSignInPage;
+import pages.SignPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -25,16 +24,16 @@ public class TestCase {
       driver.get("https://test.sharebus.co/");
 
       Thread.sleep(3000);
-      SignInPage signInPage = new SignInPage(driver);
-      signInPage.NavigateToSignPage();
+      NavigateSignInPage navigateSignInPage = new NavigateSignInPage(driver);
+      navigateSignInPage.ClickSignIn();
   }
 
   @Test
-  public void VerifySignInWithCredentials(){
-    VerifySignIn verifySignIn = new VerifySignIn(driver);
-    verifySignIn.emailField().sendKeys("brainstation23@yopmail.com");
-    verifySignIn.passwordField().sendKeys("Pass@1234");
-    verifySignIn.signInButton().click();
+  public void SignInWithCredentials(){
+    SignPage signPage = new SignPage(driver);
+    signPage.emailField().sendKeys("brainstation23@yopmail.com");
+    signPage.passwordField().sendKeys("Pass@1234");
+    signPage.signInButton();
 
   }
 

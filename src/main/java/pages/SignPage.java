@@ -1,14 +1,14 @@
-package automation;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class VerifySignIn {
+public class SignPage {
 
     WebDriver driver;
 
-    public VerifySignIn(WebDriver driver){
+    public SignPage(WebDriver driver){
         this.driver = driver;
     }
     private By emailInputField = By.id("email");
@@ -25,7 +25,8 @@ public class VerifySignIn {
         return driver.findElement(passwordInputField);
     }
 
-    public WebElement signInButton(){
-        return driver.findElement(signInButton);
+    public void signInButton(){
+        WebElement clickSignIn = driver.findElement(signInButton);
+        clickSignIn.click();
     }
 }
