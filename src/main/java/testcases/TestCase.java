@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.UserSelection;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +36,12 @@ public class TestCase {
     signPage.passwordField().sendKeys("Pass@1234");
     signPage.signInButton();
 
+  }
+
+  @Test
+  public void UserAsShareLead(){
+    UserSelection userSelection = new UserSelection(driver);
+    userSelection.selectUser();
   }
 
 
