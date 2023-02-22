@@ -49,4 +49,16 @@ public class TestCase {
     tripDetails.ShareBusTripDetails();
   }
 
+  @Test
+  public void WholeMemberShipInfo(){
+    MembershipInfo membershipInfo = new MembershipInfo();
+    membershipInfo.MemberShipDetails();
+  }
+
+
+ @Test
+  public void BrowserClose(){
+    browser.closeChrome();
+ }
+
 }

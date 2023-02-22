@@ -59,7 +59,7 @@ public class TripDetails extends BasePage {
         WebElement inputDepartureDate = driver.findElement(departureDate);
         inputDepartureDate.clear();
         inputDepartureDate.sendKeys("Wednesday, 22.03.2023");
-        waitTime(4500);
+        waitTime(2000);
 
         WebElement inputDepartureTime = driver.findElement(departureTime);
         inputDepartureTime.clear();
@@ -67,36 +67,28 @@ public class TripDetails extends BasePage {
         scrollElement(inputDepartureTime);
 
         inputDepartureTime.sendKeys("06:30");
-        waitTime(4500);
+        waitTime(2000);
 
         //Return Date & Time
         WebElement inputReturnDate = driver.findElement(returnDate);
         inputReturnDate.clear();
 
         inputReturnDate.sendKeys("Friday, 31.03.2023");
-        waitTime(4500);
+        waitTime(2000);
 
         WebElement inputReturnTime = driver.findElement(returnTime);
         inputReturnTime.clear();
 
         inputReturnTime.sendKeys("06:45");
-        waitTime(4500);
+        waitTime(2000);
 
         scrollElement(inputReturnTime);
 
         //Click Submit
         WebElement submitContinue = driver.findElement(clickContinue);
         submitContinue.click();
-        waitTime(3000);
-
-
-
-
-
 
 
     }
-
-
 
 }

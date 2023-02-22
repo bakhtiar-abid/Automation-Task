@@ -21,7 +21,7 @@ public class UserSelection extends BasePage {
 
 
     public void selectUser(){
-        waitTime(10000);
+        waitTime(3000);
         WebElement clickOnDropDown = driver.findElement(clickDropDown);
 
         clickOnDropDown.click();
