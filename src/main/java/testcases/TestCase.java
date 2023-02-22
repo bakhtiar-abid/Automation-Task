@@ -1,37 +1,30 @@
 package testcases;
 
 
-import pages.NavigateSignInPage;
-import pages.SignPage;
+import pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import pages.UserSelection;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestCase {
 
+  Browser browser = new Browser();
 
-  WebDriver driver;
 
   @Test
-    public void NavigateSignIn() throws InterruptedException {
-      WebDriverManager.chromedriver().setup();
-      driver = new ChromeDriver();
-      driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS );
-      driver.get("https://test.sharebus.co/");
-
+    public void AstrogateSignIn() throws InterruptedException {
+      browser.openChromeBrowser();
       Thread.sleep(3000);
-      NavigateSignInPage navigateSignInPage = new NavigateSignInPage(driver);
+      NavigateSignInPage navigateSignInPage = new NavigateSignInPage();
       navigateSignInPage.ClickSignIn();
   }
 
   @Test
-  public void SignInWithCredentials(){
-    SignPage signPage = new SignPage(driver);
+  public void CredentialsWithSignIn(){
+    SignPage signPage = new SignPage();
     signPage.emailField().sendKeys("brainstation23@yopmail.com");
     signPage.passwordField().sendKeys("Pass@1234");
     signPage.signInButton();
@@ -39,10 +32,21 @@ public class TestCase {
   }
 
   @Test
-  public void UserAsShareLead(){
-    UserSelection userSelection = new UserSelection(driver);
+  public void SelectUser(){
+    UserSelection userSelection = new UserSelection();
     userSelection.selectUser();
   }
 
+  @Test
+  public void ShareBusSelect(){
+    SetUpShareBus setUpShareBus = new SetUpShareBus();
+    setUpShareBus.shareBusSelection();
+  }
+
+  @Test
+  public void TripInformation(){
+    TripDetails tripDetails = new TripDetails();
+    tripDetails.ShareBusTripDetails();
+  }
 
 }

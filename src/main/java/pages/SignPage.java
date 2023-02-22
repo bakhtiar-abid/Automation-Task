@@ -8,8 +8,8 @@ public class SignPage {
 
     WebDriver driver;
 
-    public SignPage(WebDriver driver){
-        this.driver = driver;
+    public SignPage(){
+        this.driver = Browser.getDriver();
     }
     private By emailInputField = By.id("email");
     private By passwordInputField = By.id("password");

@@ -9,8 +9,8 @@ public class UserSelection extends BasePage {
 
     WebDriver driver;
 
-    public UserSelection(WebDriver driver){
-        this.driver = driver;
+    public UserSelection(){
+        this.driver = Browser.getDriver();
     }
 
     private By clickDropDown = By.className("p-dropdown-trigger");
